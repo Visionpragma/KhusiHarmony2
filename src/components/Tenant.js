@@ -30,10 +30,14 @@ function RegistrationPage() {
         //method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(tenant)
-    }).then((res)=> {console.log("New Tenant {name} Got added")
+    }).then((response)=> {console.log("New Tenant Got added")
         toast.success("Wow Tenant got added successfully!")
    
     })
+    .catch(error => {
+      // Handle any errors
+      console.error(error);
+    });
   }
     // Perform registration logic with the form data
     // For example, send an API request to register the user
