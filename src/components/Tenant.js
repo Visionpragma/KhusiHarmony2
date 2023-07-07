@@ -5,6 +5,7 @@ import { json } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import log from 'loglevel';
 
   
 
@@ -25,17 +26,19 @@ function RegistrationPage() {
     const tenant={name,mobileNo,address}
     console.log(tenant)
         //fetch("http://localhost:8080/tenant/add",{
-        //fetch("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
-          axios.post("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
-        //method:"POST",
+        fetch("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
+          //axios.post("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
+        method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(tenant)
     }).then((response)=> {console.log("New Tenant Got added")
+    log.info("Successfully spring api got called");
         toast.success("Wow Tenant got added successfully!")
    
     })
     .catch(error => {
       // Handle any errors
+      log.error("Could not call Spring API",error);
       console.error(error);
     });
   }
