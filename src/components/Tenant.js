@@ -26,7 +26,8 @@ function RegistrationPage() {
     const tenant={name,mobileNo,address}
     console.log(tenant)
         //fetch("http://localhost:8080/tenant/add",{
-        fetch("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
+        //fetch("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
+        fetch(" https://bkq2baakw4.execute-api.us-east-1.amazonaws.com/khusiharmonyprod/tenant-ervice",{
           //axios.post("http://khusiharmonyspringbootapp-env.eba-bjghepdc.us-east-1.elasticbeanstalk.com/tenant/add",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
