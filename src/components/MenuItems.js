@@ -11,13 +11,13 @@ export const MenuItems = [
     },
     {
         title:"KhusiManagement",
-        url:"/",
+        url:"/Tenant",
         cName:"nav-links",
         icon:faEnvelope
     },
     {
         title:"Tenant",
-        url:"/Tenant",
+        url:"/",
         cName:"nav-links",
         icon:"faCogs"
     },
